@@ -1,0 +1,68 @@
+:root {
+    --green: #d2f7d8;
+    --purple: #403fa6;
+    --innerWidth: 100vw;
+    --innerHeight: 100vh;
+    --animation-delay: 0s
+}
+
+main {
+    height: var(--innerHeight);
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animate-content {
+    flex: 1 0 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 50px;
+  
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h1,
+h2 {
+    color: var(--purple);
+    margin: 0;
+    opacity: 0;
+}
+
+.letter {
+    display: inline-block;
+    white-space: pre;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1)  var(--animation-delay);
+  
+}
+
+
+.letter.enter {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+.word {
+    display: inline-block;
+    white-space: pre;
+    transform: scale(14);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1)  var(--animation-delay);
+}
+
+.word.scaleIn {
+    transform: scale(1);
+    opacity: 1;
+}
